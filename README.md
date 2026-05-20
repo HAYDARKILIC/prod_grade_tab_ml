@@ -49,8 +49,8 @@ tests/             pytest suite (29 tests passing)
 ## Installation
 
 ```bash
-git clone https://github.com/HAYDARKILIC/gradient-forge.git
-cd gradient-forge
+git clone https://github.com/HAYDARKILIC/prod_grade_tab_ml.git
+cd prod_grade_tab_ml
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 ```
@@ -62,7 +62,7 @@ GPU dependencies are documented in `environment.yml` (Conda).
 ## Usage
 
 ```python
-from gradient_forge.boosting import GradientBooster, SquaredError
+from prod_grade_tab_ml.boosting import GradientBooster, SquaredError
 
 # X, y: numpy arrays
 model = GradientBooster(
