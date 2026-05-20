@@ -1,0 +1,14 @@
+catboost:
+  task: binary
+  iterations: 1000
+  learning_rate: 0.05
+  depth: 6
+  l2_leaf_reg: 3.0
+  border_count: 254
+  cat_features: null
+  gpu: false
+  random_state: 42
+  extra_params:
+    loss_function: Logloss
+    bootstrap_type: Bernoulli
+    subsample: 0.8

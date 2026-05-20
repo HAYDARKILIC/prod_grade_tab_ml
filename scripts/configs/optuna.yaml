@@ -1,0 +1,15 @@
+optuna:
+  algorithms: [xgboost, lightgbm, catboost]
+  task: binary
+  n_trials: 200
+  timeout: 7200            # seconds
+  cv_splits: 5
+  gpu: true
+  random_state: 42
+  direction: maximize
+  pruner:
+    name: median
+    n_startup_trials: 10
+    n_warmup_steps: 10
+  storage: sqlite:///optuna.db
+  study_name: gradient_forge_v1

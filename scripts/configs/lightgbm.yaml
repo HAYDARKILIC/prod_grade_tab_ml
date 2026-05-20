@@ -1,0 +1,18 @@
+lightgbm:
+  task: binary
+  n_estimators: 1000
+  learning_rate: 0.05
+  num_leaves: 63
+  max_depth: -1
+  min_child_samples: 20
+  reg_lambda: 1.0
+  reg_alpha: 0.0
+  feature_fraction: 0.8
+  bagging_fraction: 0.8
+  bagging_freq: 5
+  boosting_type: gbdt
+  gpu: false
+  random_state: 42
+  extra_params:
+    objective: binary
+    metric: auc

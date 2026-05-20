@@ -1,0 +1,49 @@
+# End-to-end pipeline configuration consumed by scripts/run_pipeline.py
+pipeline:
+  task: binary
+  random_state: 42
+  cv_splits: 5
+  test_size: 0.2
+
+data:
+  source: synthetic           # "synthetic" | "csv"
+  path: null
+  target: y
+  numeric_features: []
+  categorical_features: []
+  inject_missingness_rate: 0.05
+
+preprocessing:
+  scale_numeric: false
+  numeric_strategy: median
+
+optimization:
+  n_trials: 100
+  timeout: 3600
+  pruner: median
+  gpu: false
+  storage: sqlite:///optuna_pipeline.db
+
+ensemble:
+  method: weighted             # "weighted" | "stacking"
+  metric: auc
+
+output:
+  reports_dir: reports
+  artifacts_dir: artifacts
+  export_onnx: true
+
+xgb:
+  task: binary
+  gpu: false
+  random_state: 42
+
+lgb:
+  task: binary
+  gpu: false
+  random_state: 42
+
+cat:
+  task: binary
+  gpu: false
+  random_state: 42
